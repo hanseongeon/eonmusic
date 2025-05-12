@@ -1,8 +1,9 @@
 package com.example.eonmusic.Entity;
 
-
-import jakarta.persistence.*;
-import lombok.Builder;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -10,35 +11,23 @@ import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 @Setter
 @Getter
 @NoArgsConstructor
-public class Album {
-
+public class Music {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String name;
 
-    private String albumPicture;
-
-    @OneToMany(cascade = CascadeType.REMOVE)
-    private List<Music> musicList = new ArrayList<>();
+    private String music;
 
     @CreatedDate
     private LocalDateTime createDate;
 
     @LastModifiedDate
     private LocalDateTime modifyDate;
-
-    @Builder
-    public Album (String name, String albumPicture){
-        this.name = name;
-        this.albumPicture = albumPicture;
-    }
 }

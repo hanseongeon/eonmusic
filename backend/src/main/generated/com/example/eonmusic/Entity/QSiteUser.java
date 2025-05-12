@@ -7,6 +7,7 @@ import com.querydsl.core.types.dsl.*;
 import com.querydsl.core.types.PathMetadata;
 import javax.annotation.processing.Generated;
 import com.querydsl.core.types.Path;
+import com.querydsl.core.types.dsl.PathInits;
 
 
 /**
@@ -19,9 +20,13 @@ public class QSiteUser extends EntityPathBase<SiteUser> {
 
     public static final QSiteUser siteUser = new QSiteUser("siteUser");
 
+    public final ListPath<Album, SimplePath<Album>> albumList = this.<Album, SimplePath<Album>>createList("albumList", Album.class, SimplePath.class, PathInits.DIRECT2);
+
     public final DateTimePath<java.time.LocalDateTime> createDate = createDateTime("createDate", java.time.LocalDateTime.class);
 
     public final DateTimePath<java.time.LocalDateTime> modifyDate = createDateTime("modifyDate", java.time.LocalDateTime.class);
+
+    public final ListPath<PlayList, QPlayList> myPlayList = this.<PlayList, QPlayList>createList("myPlayList", PlayList.class, QPlayList.class, PathInits.DIRECT2);
 
     public final StringPath name = createString("name");
 
