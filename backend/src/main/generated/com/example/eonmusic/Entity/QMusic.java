@@ -7,20 +7,17 @@ import com.querydsl.core.types.dsl.*;
 import com.querydsl.core.types.PathMetadata;
 import javax.annotation.processing.Generated;
 import com.querydsl.core.types.Path;
-import com.querydsl.core.types.dsl.PathInits;
 
 
 /**
- * QAlbum is a Querydsl query type for Album
+ * QMusic is a Querydsl query type for Music
  */
 @Generated("com.querydsl.codegen.DefaultEntitySerializer")
-public class QAlbum extends EntityPathBase<Album> {
+public class QMusic extends EntityPathBase<Music> {
 
-    private static final long serialVersionUID = -1299202912L;
+    private static final long serialVersionUID = -1287836586L;
 
-    public static final QAlbum album = new QAlbum("album");
-
-    public final StringPath albumPicture = createString("albumPicture");
+    public static final QMusic music1 = new QMusic("music1");
 
     public final DateTimePath<java.time.LocalDateTime> createDate = createDateTime("createDate", java.time.LocalDateTime.class);
 
@@ -28,20 +25,20 @@ public class QAlbum extends EntityPathBase<Album> {
 
     public final DateTimePath<java.time.LocalDateTime> modifyDate = createDateTime("modifyDate", java.time.LocalDateTime.class);
 
-    public final ListPath<Music, QMusic> musicList = this.<Music, QMusic>createList("musicList", Music.class, QMusic.class, PathInits.DIRECT2);
+    public final StringPath music = createString("music");
 
     public final StringPath name = createString("name");
 
-    public QAlbum(String variable) {
-        super(Album.class, forVariable(variable));
+    public QMusic(String variable) {
+        super(Music.class, forVariable(variable));
     }
 
-    public QAlbum(Path<? extends Album> path) {
+    public QMusic(Path<? extends Music> path) {
         super(path.getType(), path.getMetadata());
     }
 
-    public QAlbum(PathMetadata metadata) {
-        super(Album.class, metadata);
+    public QMusic(PathMetadata metadata) {
+        super(Music.class, metadata);
     }
 
 }
