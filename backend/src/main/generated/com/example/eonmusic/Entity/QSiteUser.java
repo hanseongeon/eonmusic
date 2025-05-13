@@ -21,7 +21,6 @@ public class QSiteUser extends EntityPathBase<SiteUser> {
     public static final QSiteUser siteUser = new QSiteUser("siteUser");
 
     public final ListPath<Album, QAlbum> albumList = this.<Album, QAlbum>createList("albumList", Album.class, QAlbum.class, PathInits.DIRECT2);
-
     public final DateTimePath<java.time.LocalDateTime> createDate = createDateTime("createDate", java.time.LocalDateTime.class);
 
     public final DateTimePath<java.time.LocalDateTime> modifyDate = createDateTime("modifyDate", java.time.LocalDateTime.class);
